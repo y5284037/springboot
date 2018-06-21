@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /hello
+  port: 8080
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://39.108.48.22:3306/bmofang?characterEncoding=UTF-8
+    username: root
+    password: java
+    driver-class-name: com.mysql.jdbc.Driver
+
