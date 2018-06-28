@@ -1,6 +1,8 @@
 package com.bmofang.mapper;
 
 import com.bmofang.bean.Student;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -23,4 +25,10 @@ import java.util.List;
 public interface StudentMapper {
     @Select("SELECT * FROM student")
     List<Student> findall();
+    
+    @Insert("INSERT INTO student(student_id,name,age,sex) VALUES(#{studentID},#{name},#{age},#{sex})")
+    void insert(Student student);
+    
+    @Delete("DELETE FROM student WHERE id = #{id}")
+    void delete(Integer id);
 }

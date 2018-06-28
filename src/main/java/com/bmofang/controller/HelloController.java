@@ -8,7 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -35,7 +37,6 @@ public class HelloController {
     @Autowired
     StudentMapper studentMapper;
     
-    Logger logger = LoggerFactory.getLogger(HelloController.class);
     
     @RequestMapping("/hello")
     public String hello(Model model) {
@@ -48,7 +49,27 @@ public class HelloController {
     public String findAll(Model model) {
         List<Student> students = studentMapper.findall();
         model.addAttribute("students", students);
-        logger.info(students.toString());
+        log.info(students.toString());
+        log.info("你好");
         return "listStudent";
+    }
+    
+    @RequestMapping(value = "/student", method = RequestMethod.POST)
+    public String insertStudent(Student student) {
+        
+        studentMapper.insert(student);
+        return "redirect:list";
+    }
+    
+    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    public String insertPage() {
+        return "insert";
+    }
+    
+    @PostMapping("/onestudent")
+    public String deleteStudent(Integer id){
+        System.out.println(id);
+        studentMapper.delete(id);
+        return "redirect:list";
     }
 }

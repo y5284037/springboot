@@ -1,0 +1,54 @@
+Starting SpringbootApplication on DESKTOP-JOUPBQS with PID 5392 (E:\oldDemo\springboot\target\classes started by 52840 in E:\oldDemo\springboot)
+Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+No active profile set, falling back to default profiles: default
+Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@203cad2b: startup date [Thu Jun 28 17:39:01 CST 2018]; root of context hierarchy
+Tomcat initialized with port(s): 8080 (http)
+Starting service [Tomcat]
+Starting Servlet Engine: Apache Tomcat/8.5.31
+The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows; .;D:\Java\jdk\bin;D:\Java\jdk\jre\bin;D:\maven\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\soft\TortoiseSVN\bin;D:\Git\cmd;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\HP\IdrsOCR_15.2.10.1114\;C:\Users\52840\AppData\Local\Microsoft\WindowsApps;;.]
+At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1961 ms
+Servlet dispatcherServlet mapped to [/]
+Servlet statViewServlet mapped to [/druid/*]
+Mapping filter: 'characterEncodingFilter' to: [/*]
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Mapping filter: 'requestContextFilter' to: [/*]
+Mapping filter: 'webStatFilter' to urls: [/*]
+Init DruidDataSource
+{dataSource-1} inited
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@203cad2b: startup date [Thu Jun 28 17:39:01 CST 2018]; root of context hierarchy
+Detected ResponseBodyAdvice bean in JSONPResponseBodyAdvice
+Detected ResponseBodyAdvice bean in fastJsonpResponseBodyAdvice
+Detected ResponseBodyAdvice bean in fastJsonViewResponseBodyAdvice
+Mapped "{[/student],methods=[GET]}" onto public java.lang.String com.bmofang.controller.HelloController.insertPage()
+Mapped "{[/list]}" onto public java.lang.String com.bmofang.controller.HelloController.findAll(org.springframework.ui.Model)
+Mapped "{[/onestudent],methods=[POST]}" onto public java.lang.String com.bmofang.controller.HelloController.deleteStudent(java.lang.Integer)
+Mapped "{[/hello]}" onto public java.lang.String com.bmofang.controller.HelloController.hello(org.springframework.ui.Model)
+Mapped "{[/student],methods=[POST]}" onto public java.lang.String com.bmofang.controller.HelloController.insertStudent(com.bmofang.bean.Student)
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Detected ResponseBodyAdvice implementation in JSONPResponseBodyAdvice
+Detected ResponseBodyAdvice implementation in fastJsonpResponseBodyAdvice
+Detected ResponseBodyAdvice implementation in fastJsonViewResponseBodyAdvice
+LiveReload server is running on port 35729
+Registering beans for JMX exposure on startup
+Bean with name 'statFilter' has been autodetected for JMX exposure
+Bean with name 'dataSource' has been autodetected for JMX exposure
+Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+Tomcat started on port(s): 8080 (http) with context path ''
+Started SpringbootApplication in 5.57 seconds (JVM running for 6.16)
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+FrameworkServlet 'dispatcherServlet': initialization started
+FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+==>  Preparing: SELECT * FROM student 
+==> Parameters: 
+<==      Total: 3
+{conn-10005, pstmt-20000} enter cache
+[Student(id=13, studentID=520, name=希尔瓦娜斯, age=18, sex=女), Student(id=22, studentID=991, name=王小刚, age=15, sex=男), Student(id=23, studentID=520, name=希尔瓦娜斯, age=18, sex=女)]
+你好
