@@ -35,13 +35,13 @@ spring:
         prefix: /WEB-INF/views/
         suffix: .jsp
 ##开启 sql+log日志   logging.leval+包名 (com.winterchen.dao)  +日志等级(debug)
-logging:
-  level:
-    com: debug
+#logging:
+#  level:
+#    com: debug
   ##将日志输出到当前工作目录下,file默认是以10MB为一个日志文件大小.
-  file: logs/my.log
-  pattern:
-    file: "%msg%n"
+#  file: logs/my.log
+#  pattern:
+#    file: "%msg%n"
 
 ##开启mybatis经典数据库下划线命名转java驼峰命名
 mybatis:

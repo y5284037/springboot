@@ -3,14 +3,11 @@ package com.bmofang.controller;
 import com.bmofang.bean.Student;
 import com.bmofang.mapper.StudentMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -37,15 +34,14 @@ public class HelloController {
     @Autowired
     StudentMapper studentMapper;
     
-    
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     public String hello(Model model) {
         model.addAttribute("now", DateFormat.getInstance().format(new Date()));
         /*return name+age;*/
         return "hello";
     }
     
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public String findAll(Model model) {
         List<Student> students = studentMapper.findall();
         model.addAttribute("students", students);
@@ -54,20 +50,19 @@ public class HelloController {
         return "listStudent";
     }
     
-    @RequestMapping(value = "/student", method = RequestMethod.POST)
+    @PostMapping("/student")
     public String insertStudent(Student student) {
-        
         studentMapper.insert(student);
         return "redirect:list";
     }
     
-    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    @GetMapping("/student")
     public String insertPage() {
         return "insert";
     }
     
     @PostMapping("/onestudent")
-    public String deleteStudent(Integer id){
+    public String deleteStudent(Integer id) {
         System.out.println(id);
         studentMapper.delete(id);
         return "redirect:list";
