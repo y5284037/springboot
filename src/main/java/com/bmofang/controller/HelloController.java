@@ -45,8 +45,6 @@ public class HelloController {
     public String findAll(Model model) {
         List<Student> students = studentMapper.findall();
         model.addAttribute("students", students);
-        log.info(students.toString());
-        log.info("你好");
         return "listStudent";
     }
     
