@@ -105,9 +105,10 @@
     </logger>
 
     <!--此logger是为了记录web框架运行-->
-    <!--<logger name="org.springframework.web" level="DEBUG" additivity="false">
+    <logger name="org.springframework" level="INFO" additivity="false">
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="ERROR-OUT" />
-    </logger>-->
+        <appender-ref ref="INFO-OUT"/>
+        <appender-ref ref="ERROR" />
+    </logger>
 
 </configuration>

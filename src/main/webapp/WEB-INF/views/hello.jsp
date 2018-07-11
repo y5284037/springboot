@@ -9,6 +9,6 @@
     pageEncoding="utf-8" %>
 <html>
 <body>
-Hi , my first Spring boot demo ${now}
+Hi , my first Spring boot demo ${now},from port ${port}
 </body>
 </html>
